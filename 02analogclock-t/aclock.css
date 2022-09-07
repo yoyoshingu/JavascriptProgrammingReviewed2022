@@ -1,0 +1,88 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+}
+
+body{
+    background: linear-gradient(to right, hsl(200, 100%, 50%), hsl(175, 100%, 50%));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.clcok{
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255  , 255, 255, .8);
+    border-radius: 50%;
+    border: 2px solid black;
+    position: relative;
+}
+
+.clcok .number{
+    --rotation:0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    transform: rotate(var(--rotation));
+}
+
+.clcok .number1{--rotation:30deg;}
+.clcok .number2{--rotation:60deg;}
+.clcok .number3{--rotation:90deg;}
+.clcok .number4{--rotation:120deg;}
+.clcok .number5{--rotation:150deg;}
+.clcok .number6{--rotation:180deg;}
+.clcok .number7{--rotation:210deg;}
+.clcok .number8{--rotation:240deg;}
+.clcok .number9{--rotation:270deg;}
+.clcok .number10{--rotation:300deg;}
+.clcok .number11{--rotation:330deg;}
+
+
+.clcok .hand{
+    --rotation:0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 10px;
+    height: 50%;
+    background-color: black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px ;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+}
+
+.clcok::after{
+    content: '';
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.clcok .hand.hour{
+    width:10px;
+    height:35%;
+    background-color: black;
+}
+.clcok .hand.minute{
+    width:7px;
+    height:40%;
+    background-color: black;
+}
+.clcok .hand.second{
+    width:3px;
+    height:45%;
+    background-color: red;
+}
