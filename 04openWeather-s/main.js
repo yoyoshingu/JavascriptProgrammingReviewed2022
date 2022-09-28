@@ -9,7 +9,7 @@ let icon_url =
 
 axios
   .get(
-    "https://api.openweathermap.org/data/2.5/find?q=london&units=metric&appid=7d96bc5108f52b80e2d9075a369b9f35"
+    "https://api.openweathermap.org/data/2.5/find?q=seoul&units=metric&appid=7d96bc5108f52b80e2d9075a369b9f35"
   )
   .then(function (response) {
     console.log(response.data);
