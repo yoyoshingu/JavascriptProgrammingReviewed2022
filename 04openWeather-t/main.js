@@ -6,8 +6,12 @@ let weather = document.querySelector("#weather");
 let icon = document.querySelector("#icon");
 let icon_url =
   "https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/";
-let openweather_url =
+
+let openweatherfind_url =
   "https://api.openweathermap.org/data/2.5/find?q=seoul&units=metric&appid=7d96bc5108f52b80e2d9075a369b9f35";
+
+let openweather_url =
+  "https://api.openweathermap.org/data/2.5/weather?q=seoul&units=metric&appid=7d96bc5108f52b80e2d9075a369b9f35";
 
 var ajaxrequest = new XMLHttpRequest();
 function getWeatherfind() {
@@ -29,4 +33,23 @@ function getWeatherfind() {
   };
 }
 
-getWeatherfind();
+function getWeather() {
+  ajaxrequest.open("GET", openweather_url);
+  ajaxrequest.send();
+  ajaxrequest.onreadystatechange = function () {
+    if (ajaxrequest.readyState == 4) {
+      response = JSON.parse(ajaxrequest.responseText);
+      console.log(response);
+
+      let exdata = response.weather[0];
+      temp.innerText = response.main.temp;
+      min.innerText = response.main.temp_min;
+      max.innerText = response.main.temp_max;
+      wind.innerText = response.wind.speed;
+      weather.innerText = exdata.main + "," + exdata.description;
+      debugger;
+    }
+  };
+}
+
+getWeather();
