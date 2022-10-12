@@ -36,13 +36,13 @@
       <input type="text" name="" placeholder="도시이름" id="city" />
       <br />
       온도단위선택
-      <select id="tempunit">
-        <option value="standard" selected>Kelvin</option>
-        <option value="metric">Celsius</option>
+      <select id="tempunit" onchange="weatherseek()">
+        <option value="standard">Kelvin</option>
+        <option value="metric" selected>Celsius</option>
         <option value="imperial">Fahrenheit</option>
       </select>
       <br />
-      <input type="button" value="날씨검색" id="go" />
+      <input type="button" value="날씨검색" id="go" onclick="weatherseek()" />
       <input type="text" id="cr" />
     </div>
   </body>
