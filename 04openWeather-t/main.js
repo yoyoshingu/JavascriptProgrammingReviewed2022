@@ -91,4 +91,15 @@ button.onclick = function (e) {
   getWeatherbycity();
 };
 
+const unitselect = document.getElementById("tempunit");
+unitselect.onchange = function (e) {
+  let cityinput = document.getElementById("city");
+  cityname = cityinput.value;
+  openweather_go = openweather_basic + "&q=" + cityname;
+
+  let tempinput = document.getElementById("tempunit");
+  tempunit = tempinput.value;
+  openweather_go += "&units=" + tempunit;
+  getWeatherbycity();
+};
 getWeather();
