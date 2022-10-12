@@ -16,7 +16,8 @@
     <div
       class="container w-75 mt-5 p-5 shadow text-center bg-warning text-dark"
     >
-      <h2>Current Weather in Seoul, Korea</h2>
+      <h2>Current Weather in</h2>
+      <h2 id="citycr">Seoul, Korea</h2>
       <hr />
       <div class="row bg-success p-5 rounded-circle">
         <div class="col-5">
@@ -31,7 +32,16 @@
       </div>
     </div>
     <div class="input">
-      <input type="text" name="" id="city" />
+      도시이름
+      <input type="text" name="" placeholder="도시이름" id="city" />
+      <br />
+      온도단위선택
+      <select id="tempunit">
+        <option value="standard">a</option>
+        <option value="metric">b</option>
+        <option value="imperial">c</option>
+      </select>
+      <br />
       <input type="button" value="날씨검색" id="go" />
       <input type="text" id="cr" />
     </div>
